@@ -83,7 +83,7 @@
 </footer>
 <script src="<?php echo base_url('sys/assets/lib/jquery-3.6.3.min.js') ?>"></script>
 <script src="<?php echo base_url('sys/assets/lib/bootstrap533/js/bootstrap.bundle.min.js') ?>"></script>
-<script src="https://unpkg.com/@barba/core1"></script>
+<script src="https://unpkg.com/@barba/core"></script>
 <script src="<?php echo base_url('sys/assets/js/scripts.js') ?>"></script>
 <?php echo $js ?? ""; ?>
 <script>
