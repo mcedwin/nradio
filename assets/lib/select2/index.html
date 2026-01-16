@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/css/select2.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <select class="paciente js-states form-control" id="inputGroupSelect041" ide='1' text='Nombre'>
+    </select>
+    <script src="http://localhost/sislab/sys/assets/lib/jquery-3.6.3.min.js"></script>
+    <script src="dist/js/select2.min.js"></script>
+    <script>
+
+        function formatRepo(repo) {
+            var markup = repo.text;
+            return markup;
+        }
+
+        function formatRepoSelection(repo) {
+            return markup = repo.text;
+        }
+
+        $.fn.Seleccion2 = function (title, url) {
+            $(this).select2({
+                placeholder: title,
+                allowClear: true,
+                width: '100%',
+                language: "es",
+                minimumInputLength: Infinity,
+                ajax: {
+                    url: 'http://localhost/simos' + url,
+                    dataType: 'json',
+                    data: function (params) {
+                        return {
+                            q: params.term,
+                            p: params.page
+                        };
+                    },
+                    processResults: function (data, params) {
+                        params.page = params.page || 1;
+                        return {
+                            results: data.items,
+                            pagination: {
+                                more: (params.page * 30) < data.total_count
+                            }
+                        };
+                    },
+                    cache: true
+                },
+                escapeMarkup: function (markup) {
+                    return markup;
+                },
+                minimumInputLength: 0,
+                templateResult: formatRepo,
+                templateSelection: formatRepoSelection
+            }).on("select2:select", function (e) {
+
+            }).on('select2:unselect', function (e) {
+
+            });
+        }
+
+        $.fn.load_usuario = function (clase, placeholder, url) {
+            var data = { id: $(this).find(clase).attr('ide'), text: $(this).find(clase).attr('text') }
+            var option = new Option(data.text, data.id, true, true);
+            $(this).find(clase).append(option).trigger('change');
+            $(this).find(clase).trigger({
+                type: 'select2:select',
+                params: {
+                    data: data
+                }
+            });
+            $(this).find(clase).Seleccion2(placeholder, url);
+        }
+
+        $('.paciente').Seleccion2("Seleccionar paciente", '/Usuario/buscar');
+    </script>
+</body>
+
+</html>

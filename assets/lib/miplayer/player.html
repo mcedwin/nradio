@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Audio Player</title>
+    <meta charset="utf-8">
+
+    <!-- https://icomoon.io/app/ -->
+    <link rel="stylesheet" href="player.css">
+    <script src="player.js"></script>
+  </head>
+  <body>
+    <div id="player">
+      <!-- (PART A) CURRENT SONG IMAGE -->
+
+      <!-- (PART B) CONTROLS  -->
+      <div id="playControls" style="background-image:url('02.jpg')">
+        <!-- (B1) SONG NAME -->
+        <div id="playName">Select A Song</div>
+
+        <!-- (B2) SONG TIME -->
+        <input id="playTimeR" type="range" value="0" min="0" disabled>
+        <div id="playTimeD">
+          <div id="playTimeN">0:00</div>
+          <div id="playTimeT">0:00</div>
+        </div>
+
+        <!-- (B3) LAST, PLAY/PAUSE, NEXT, VOLUME -->
+        <div id="playButtons">
+          <i id="playLast" class="icon-previous2"></i>
+          <i id="playTog" class="icon-pause2"></i>
+          <i id="playNext" class="icon-next2"></i>
+          <i id="playVolI" class="icon-volume-high"></i>
+          <input id="playVolR" type="range" min="0" max="1" step="0.1" value="1" disabled>
+        </div>
+      </div>
+
+      <!-- (PART C) PLAYLIST -->
+      <div id="playList">
+        <div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">1. Diac. Anibal Aguilar - 26 Aniversario IPC</div>
+		<div class="play_artist">Alabanzas</div>
+		</div>
+        <div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+		<div data-src="guitar.mp3" data-img="guitar.webp">
+		<div class="play_song">Guitar</div>
+		<div class="play_artist">Categoria</div>
+		</div>
+      </div>
+    </div>
+  </body>
+</html>

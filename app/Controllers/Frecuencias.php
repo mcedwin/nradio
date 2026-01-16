@@ -1,0 +1,71 @@
+<?php
+
+namespace App\Controllers;
+
+use App\Models\GeneralModel;
+
+class Frecuencias extends BaseController
+{
+
+  protected $model;
+  protected $table = 'frecuencias';
+  protected $mtitle = 'Frecuencias';
+
+  public $gale_tipo = 3;
+
+  public function __construct()
+  {
+    $this->model = new GeneralModel($this->table);
+  }
+
+  public function index()
+  {
+
+    $this->addJs([ 'js/frecuencias/depa.js']);
+
+    $datos['config'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
+    $datos['noticias'] = $this->db->query("SELECT * FROM noticias where activo=1 order by orden asc limit 3")->getResult();
+    $datos['depas'] = $this->db->query("SELECT * FROM departamentos as d WHERE d.id in (SELECT idDepartamento FROM frecuencias WHERE idDepartamento=d.id)")->getResult();
+
+    $paginacion = \Config\Services::pager();
+    $perPage = 12;
+    $totalRegistros = $this->model->countAllResults(); 
+    $currentPage = $this->request->getVar('page') ?? 1; 
+    $offset = ($currentPage - 1) * $perPage;
+    $registros = $this->model->getPaginadas($perPage, $offset);
+
+    $datos['registros'] = $registros;
+    $datos['pager'] = $paginacion->makeLinks($currentPage, $perPage, $totalRegistros, 'bootstrap');
+
+    $datos['title'] = $this->mtitle;
+    $datos['table'] = $this->table;
+
+    $this->showWHeader();
+    $this->ShowContent('index', $datos);
+    $this->showWFooter();
+  }
+
+  public function list($id){
+    $datos['table'] = $this->table;
+    $datos['registros'] = $this->db->query("SELECT * FROM frecuencias WHERE idDepartamento='{$id}'")->getResult();
+    $this->ShowContent('list', $datos);
+  }
+
+  public function page($slug)
+  {
+    helper('formulario');
+    $this->addCss(['lib/fancybox/fancybox.css']);
+    $this->addJs(['lib/fancybox/fancybox.umd.js', 'js/web.js']);
+
+    $datos['config'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
+    $datos['registro'] = $reg = $this->db->query("SELECT * FROM {$this->table} WHERE slugifyTitulo='{$slug}' LIMIT 1")->getRow();
+    $datos['imagenes'] = $this->db->query("SELECT * FROM imagenes WHERE idContenido='{$reg->id}' AND tipo='{$this->gale_tipo}'")->getResult();
+
+    $datos['title'] = $this->mtitle;
+    $datos['table'] = $this->table;
+
+    $this->showWHeader();
+    $this->ShowContent('page', $datos);
+    $this->showWFooter();
+  }
+}

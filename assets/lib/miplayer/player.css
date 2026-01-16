@@ -1,0 +1,122 @@
+
+#player, #playTimeD, #playButtons { display: flex; }
+
+/* (PART B) WRAPPER & LAYOUT */
+#player {
+  flex-wrap: wrap;
+  min-width: 400px; max-width: 600px;
+  padding: 0; border-radius: 4px;
+  background: #fff;
+}
+
+/* (PART C) CURRENT SONG IMAGE */
+#playImg {
+  width: 120px; height: auto; aspect-ratio: 1/1;
+  object-fit: cover; border-radius: 10px;
+}
+
+/* (PART D) CURRENT SONG NAME & CONTROLS */
+/* (D1) WRAPPER & SHARED */
+#playControls { width: 100%; height:200px; padding: 10px;
+color: #fff;
+    text-shadow: 0 1px 1px #000;
+    font-size: 1.2rem;
+	background-size: cover;
+    background-position: center center;
+ }
+ 
+ #playControls .play_song{
+	 font-size: 1.2rem;
+	 font-weight: bold;
+	 margin-bottom:5px;
+ }
+ 
+#player input[type="range"] {
+  padding: 0; margin: 0;
+  border: none; outline: none; box-shadow: none;
+  background-color: green;
+  accent-color: #ff4b4b;
+}
+
+/* (D2) SONG NAME */
+#playName {
+  font-size: 16px; margin-bottom: 10px;
+  height: 70px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+
+/* (D3) SONG TIME */
+#playTimeN, #playTimeT { width: 50%; font-size: 14px; }
+#playTimeR { width: 100%; 
+
+}
+
+
+#playTimeT { text-align: right; }
+
+/* (D4) ICOMOON - https://icomoon.io/ */
+@font-face{font-family:icomoon;src:url(fonts/icomoon.eot?d3ybsy);src:url(fonts/icomoon.eot?d3ybsy#iefix) format('embedded-opentype'),url(fonts/icomoon.ttf?d3ybsy) format('truetype'),url(fonts/icomoon.woff?d3ybsy) format('woff'),url(fonts/icomoon.svg?d3ybsy#icomoon) format('svg');font-weight:400;font-style:normal;font-display:block}
+[class*=" icon-"],[class^=icon-]{color: #fff;font-family:icomoon!important;font-style:normal;font-weight:400;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+.icon-play3:before{content:"\ea1c"}.icon-pause2:before{content:"\ea1d"}.icon-previous2:before{content:"\ea23"}.icon-next2:before{content:"\ea24"}.icon-volume-high:before{content:"\ea26"}.icon-volume-mute2:before{content:"\ea2a"}
+
+/* (D5) CONTROL BUTTONS */
+#playButtons { margin-top: 10px; align-items: center; }
+#playLast, #playTog, #playNext, #playVolI { cursor: pointer; }
+#playLast, #playTog, #playNext { font-size: 32px; flex-grow: 1; }
+#playVolI { font-size: 16px; margin-right: 5px; }
+#playVolR { flex-shrink: 1; max-width: 120px; }
+
+/* (PART E) PLAY LIST */
+
+#playList { width: 100%; height:300px; overflow:auto; }
+#playList>div { padding: 10px; cursor: pointer; }
+#playList>div.current { background-color: #ff4b4b; color:white; }
+#playList>div.current .play_artist{ background-color: #ff4b4b; color:white; }
+
+#playList .play_artist{
+	color: #888;
+}
+
+#player #playName{
+  position: relative;
+}
+
+#player #playName .playa{
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
+/*#playList>div:nth-child(odd) { background: #f2f2f2; }*/
+
+
+
+.player{
+  background-color: #1f4478;
+}
+.cates{
+  
+  overflow: auto;
+}
+.cates a{
+  background-color: white;
+  color: black;
+}
+.cates a:hover{
+  background-color: #f55c5c;
+  color: white;
+}
+.catem{
+  display: block;
+  width: 125px;
+  height: 100px;
+ }
+ .catem.activo{
+  background-color: #f55c5c;
+  color: white;
+ }
+
+ .player .col-md-6{
+  margin: 0 !important;
+  padding: 0 !important;
+ }
