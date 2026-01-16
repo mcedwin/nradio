@@ -1,14 +1,5 @@
 <div class="col-md-4 sidebar">
-
-
-
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-
-
-
-
-
-
   <div class="card text-black shadow-sm mb-3">
     <div class="card-body p-3">
       <div class="d-flex align-items-center mb-3">
@@ -76,5 +67,13 @@
 
   </div>
 
+
+  <div class="card my-3">
+    <div class="card-body">
+      <a href="https://iplacosecha.pe/" class="d-block text-center">
+        <img src="<?php echo base_url('sys/assets/img/webipc.png'); ?>" alt="" class="img-fluid w-100">
+      </a>
+    </div>
+  </div>
 
 </div>

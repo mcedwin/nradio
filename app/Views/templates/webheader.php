@@ -33,7 +33,7 @@
     <div class="container d-flex justify-content-between align-items-center">
       <span class="badge bg-danger pulse-animation">EN VIVO</span>
       <div class="text-white small d-none d-md-block">Escucha: "La rotativa del aire" con los mejores panelistas</div>
-      <button class="btn btn-sm btn-outline-light">Escuchar Radio <i class="bi bi-play-fill"></i></button>
+      <button class="btn btn-sm btn-outline-light" id="btn-play2">Escuchar Radio <i class="bi bi-play-fill"></i></button>
     </div>
   </nav>
   <div class="mainbar">
