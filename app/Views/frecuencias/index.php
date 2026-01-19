@@ -4,7 +4,7 @@
     <div class="container">
 
       <h1 class="mt-2"><?php echo $title ?></h1>
-      <nav aria-label="breadcrumb">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="<?php echo base_url() ?>">Inicio</a></li>
           <li class="breadcrumb-item active" aria-current="page"><?php echo $title ?></li>
@@ -34,7 +34,7 @@
               </a>
               <h3><a href="<?php echo base_url($table . '/' . $reg->slugifyTitulo) ?>"><?php echo $reg->titulo ?></a></h3>
               <ul class="list-inline list-unstyled meta">
-                <!-- <li><a href=""><i class="fa fa-calendar"></i> <?php /*echo $reg->fecha*/ ?> </a></li> -->
+                <li>Frecuencia: <?php echo $reg->frecuencia ?> </li>
               </ul>
             </div>
           <?php endforeach; ?>

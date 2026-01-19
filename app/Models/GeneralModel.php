@@ -26,6 +26,11 @@ class GeneralModel extends Model
       'url' => array('label' => 'URL', 'required' => false),
       'imagen' => array('label' => 'Imagen', 'required' => false),
     ]];
+    $datas['programas'] = ['table' => 'programas', 'primary' => 'id', 'fields' => [
+      'titulo' => array('label' => 'Titulo', 'required' => false),
+      'horario' => array('label' => 'Horario', 'required' => false),
+      'detalle' => array('label' => 'Detalle', 'required' => false),
+    ]];
     $datas['noticias'] = ['table' => 'noticias', 'primary' => 'id', 'fields' => [
       'titulo' => array('label' => 'Titulo'),
       'slugifyTitulo' => array('label' => 'SubTitulo','required' => false),

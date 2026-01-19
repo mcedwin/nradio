@@ -4,11 +4,11 @@
     <div class="container">
 
       <h1 class="mt-2"><?php echo $title ?></h1>
-      <nav aria-label="breadcrumb">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="<?php echo base_url() ?>">Inicio</a></li>
           <li class="breadcrumb-item"><a href="<?php echo base_url($table) ?>"><?php echo $title ?></a></li>
-          <li class="breadcrumb-item active" aria-current="page"><?php echo $registro->titulo ?></li>
+          <!-- <li class="breadcrumb-item active" aria-current="page"><?php echo $registro->titulo ?></li> -->
         </ol>
       </nav>
 
@@ -18,11 +18,11 @@
     <div class="row">
       <div class="col-md-10 offset-md-1">
         <article class="mt-4">
-          <h3 class="mb10"><?php echo $registro->titulo ?></h3>
+          <h2 class="mb10"><?php echo $registro->titulo ?></h2>
           <div class="row">
-            <div class="col-md-8">
+            <div class="col-md-12">
               <div>
-                <img src="<?php echo base_url('static/images/' . $table . '/' . $registro->imagen); ?>" alt="" class="float-start me-3 mb-2 rounded img-fluid">
+                <img src="<?php echo base_url('static/images/' . $table . '/' . $registro->imagen); ?>" alt="" class="me-3 mb-2 rounded img-fluid">
                 <div class="detalle mb-4">
                   <?php echo wpautop($registro->detalle) ?>
                 </div>
@@ -36,7 +36,7 @@
 
 
             </div>
-            <div class="col-md-4">
+            <!-- <div class="col-md-4">
               <?php if(count($imagenes)): ?>
               <div class="card">
                 <div class="card-header">
@@ -53,7 +53,7 @@
                 </div>
               </div>
               <?php endif; ?>
-            </div>
+            </div> -->
           </div>
         </article>
       </div>

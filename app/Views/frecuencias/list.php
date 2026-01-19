@@ -6,7 +6,7 @@
               </a>
               <h3><a href="<?php echo base_url($table . '/' . $reg->slugifyTitulo) ?>"><?php echo $reg->titulo ?></a></h3>
               <ul class="list-inline list-unstyled meta">
-                <!-- <li><a href=""><i class="fa fa-calendar"></i> <?php /*echo $reg->fecha*/ ?> </a></li> -->
+                <li>Frecuencia: <?php echo $reg->frecuencia ?> </li>
               </ul>
             </div>
           <?php endforeach; ?>

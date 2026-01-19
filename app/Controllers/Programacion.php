@@ -25,7 +25,9 @@ class Programacion extends BaseController
     $this->addJs(['js/form.js']);
     $datos['config'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
 
-    $datos['title'] = 'Contacto';
+    $datos['title'] = 'Programación';
+
+    $datos['programas'] = $this->db->query("SELECT * FROM programas ORDER BY id ASC")->getResult();
 
     $this->showWHeader();
     $this->ShowContent('index', $datos);

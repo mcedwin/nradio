@@ -40,7 +40,26 @@
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-4 d-none d-md-block">
-          <span class="text-white small">Lunes, 12 de Enero 2026</span>
+          <span class="text-white small">
+            <?php
+            
+            $fecha = new DateTime();
+
+$formateador = new IntlDateFormatter(
+    'es_ES',
+    IntlDateFormatter::FULL,
+    IntlDateFormatter::NONE,
+    'America/Lima',
+    IntlDateFormatter::GREGORIAN,
+    "EEEE, dd 'de' MMMM yyyy"
+);
+
+echo ucfirst($formateador->format($fecha));
+
+            ?>
+
+
+          </span>
         </div>
         <div class="col-md-4 text-center">
           <a href="<?php echo base_url('/'); ?>" class="svg"><img src="<?php echo base_url('sys/assets/img/wlogo.png'); ?>"></a>

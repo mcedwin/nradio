@@ -4,7 +4,7 @@
     <div class="container">
 
       <h1 class="mt-2"><?php echo $title ?></h1>
-      <nav aria-label="breadcrumb">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="<?php echo base_url() ?>">Inicio</a></li>
           <li class="breadcrumb-item"><a href="<?php echo base_url($table) ?>"><?php echo $title ?></a></li>

@@ -1,10 +1,10 @@
 <div class="page">
-  <section class="d-flex align-items-center" style="background-image:url('<?php echo base_url('static/images/configuracion/' . $config->imagenBiografias); ?>')">
+  <section class="d-flex align-items-center">
 
     <div class="container">
 
       <h1 class="mt-2"><?php echo $title ?></h1>
-      <nav aria-label="breadcrumb">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="<?php echo base_url() ?>">Inicio</a></li>
           <li class="breadcrumb-item active" aria-current="page"><?php echo $title ?></li>
@@ -16,18 +16,18 @@
   <div class="container">
 
     <div class="row my-4">
-      <div class="col-md-10 offset-md-1">
+      <div class="col-md-12">
         <div class="row rounded border player">
           <div class="cates col-md-6">
-            <div class="d-flex flex-wrap gap-1 p-2 align-items-start">
+            <div class="d-flex flex-column align-items-stretch gap-2 p-2 align-items-start">
               <a href="" class="catem d-flex align-items-center rounded activo" data-list="0">
                 <div class="text-center w-100">TODOS</div>
               </a>
               <?php foreach ($categorias as $cate): ?>
-                <button href="#" class="catem d-flex align-items-center rounded" data-list="<?php echo $cate->id ?>">
+                <a href="#" class="catem d-flex align-items-center rounded" data-list="<?php echo $cate->id ?>">
                   <div class="text-center w-100"><?php echo $cate->nombre ?></div>
-                  </buttom>
-                <?php endforeach; ?>
+                </a>
+              <?php endforeach; ?>
             </div>
           </div>
           <div class="col-md-6">

@@ -4,7 +4,7 @@
     <div class="container">
 
       <h1 class="mt-2"><?php echo $title ?></h1>
-      <nav aria-label="breadcrumb">
+      <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="<?php echo base_url() ?>">Inicio</a></li>
           <li class="breadcrumb-item active" aria-current="page"><?php echo $title ?></li>
@@ -15,20 +15,25 @@
   </section>
   <div class="container">
     <div class="row content mt-4">
-      <div class="col-md-8">
-        <div class="row">
-          <?php foreach ($registros as $reg): ?>
-            <div class="col-sm-4 col-xs-6 item">
+      <div class="col-md-12">
+        <?php foreach ($registros as $reg): ?>
+          <div class="row mt-3">
+            <div class="col-md-4">
               <a href="<?php echo base_url($table . '/' . $reg->slugifyTitulo) ?>" class="img-video">
                 <img class="w-100 rounded" src="<?php echo base_url('static/images/' . $table . '/' . $reg->imagen); ?>" class="img-fluid wp-post-image" alt="" decoding="async"> <i class="glyphicon glyphicon-play-circle"></i>
               </a>
+            </div>
+            <div class="col-md-8">
               <h3><a href="<?php echo base_url($table . '/' . $reg->slugifyTitulo) ?>"><?php echo $reg->titulo ?></a></h3>
+              <p>
+                <?php echo resumen_noticia_utf8($reg->detalle) ?>
+              </p>
               <ul class="list-inline list-unstyled meta">
                 <!-- <li><a href=""><i class="fa fa-calendar"></i> <?php /*echo $reg->fecha*/ ?> </a></li> -->
               </ul>
             </div>
+          </div>
           <?php endforeach; ?>
-        </div>
         <div class="paginacion">
           <?php echo $pager ?>
 

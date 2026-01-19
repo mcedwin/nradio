@@ -198,6 +198,7 @@ abstract class BaseController extends Controller
         'menu' => [
           // ['url' => 'home', 'base' => 'home', 'name' => 'Inicio', 'ico' => 'fa-solid fa-house', 'menu' => []],
           ['url' => 'admin/banners', 'base' => 'banners', 'name' => 'Banners', 'ico' => 'fa-solid fa-film', 'menu' => []],
+          ['url' => 'admin/programas', 'base' => 'programas', 'name' => 'Programas', 'ico' => 'fa-solid fa-film', 'menu' => []],
           ['url' => 'admin/noticias', 'base' => 'noticias', 'name' => 'Noticias', 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
 
         ]
@@ -219,6 +220,7 @@ abstract class BaseController extends Controller
         'title' => 'ADMINISTRACIÓN',
         'menu' => [
           ['url' => 'admin/configuracion', 'base' => 'configuracion', 'name' => 'Configuración', 'ico' => 'fa-solid fa-gear', 'menu' => []],
+          ['url' => 'admin/audios', 'base' => 'audios', 'name' => 'Audios', 'ico' => 'fa-solid fa-music', 'menu' => []],
         ]
       ],
     ];
@@ -301,7 +303,11 @@ abstract class BaseController extends Controller
       ['url' => 'programacion', 'base' => 'programacion', 'name' => 'PROGRAMACIÓN', 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
       ['url' => 'noticias', 'base' => 'noticias', 'name' => 'NOTICIAS', 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
       ['url' => 'contacto', 'base' => 'contacto', 'name' => 'CONTACTENOS', 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
-      ['url' => 'programaactual', 'base' => 'programaactual', 'name' => 'PROGRAMA: LA VOZ DE SALVACIÓN', 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
+      // ['url' => 'programaactual', 'base' => 'programaactual', 'name' => 'PROGRAMA: LA VOZ DE SALVACIÓN', 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
+      ['url' => 'multimedia', 'base' => 'multimedia', 'name' => 'MULTIMEDIA', 'ico' => 'fa-regular fa-newspaper', 'menu' => [
+        ['url' => 'fotos', 'base' => 'multimedia', 'name' => 'Fotos'],
+        ['url' => 'audios', 'base' => 'multimedia', 'name' => 'Audio'],
+      ]],
     ];
 
 

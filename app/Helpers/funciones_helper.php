@@ -14,6 +14,20 @@ function iniFields($fields, &$tfields)
     }
 }
 
+function resumen_noticia_utf8($html, $limite_palabras = 30) {
+    $texto = strip_tags($html);
+    $texto = trim(preg_replace('/\s+/', ' ', $texto));
+
+    $palabras = preg_split('/\s+/u', $texto);
+
+    if (count($palabras) > $limite_palabras) {
+        return implode(' ', array_slice($palabras, 0, $limite_palabras)) . '...';
+    }
+
+    return $texto;
+}
+
+
 function resumen($contenido){
     return substr($contenido,0,255)."...";
 }
