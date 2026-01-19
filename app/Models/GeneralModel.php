@@ -132,8 +132,8 @@ class GeneralModel extends Model
       // 'frase10' => array('label' => 'Frase 10'),
       // 'activa' => array('label' => 'Frase Activa'),
       // 'versiculo' => array('label' => 'Versiculo'),
-      'video' => array('label' => 'Video'),
-      'idVideo' => array('label' => 'idVideo'),
+      // 'video' => array('label' => 'Video'),
+      // 'idVideo' => array('label' => 'idVideo'),
       'facebook' => array('label' => 'Facebook'),
       'twitter' => array('label' => 'Twitter'),
       'youtube' => array('label' => 'Youtube'),
@@ -148,8 +148,8 @@ class GeneralModel extends Model
       // 'imagenfrmPedido' => array('label' => 'Form Pedidos'),
       // 'imagenfrmTestimonio' => array('label' => 'Form Testimonios'),
       'contribucion' => array('label' => 'Contribución'),
-      'esenvivo' => array('label' => 'Es en Vivo','type'=>'bit', 'required' => false),
-      'urlvivo' => array('label' => 'Url En Vivo', 'required' => false),
+      // 'esenvivo' => array('label' => 'Es en Vivo','type'=>'bit', 'required' => false),
+      // 'urlvivo' => array('label' => 'Url En Vivo', 'required' => false),
     ]];
 
     $datas['config'] = ['table' => 'config', 'primary' => 'id', 'fields' => [

@@ -16,7 +16,7 @@
               echo myinput($fields->email, '12');
               echo myinput($fields->direccion, '12');
               echo myinput($fields->mapa, '12');
-              echo myinput($fields->video, '12');
+              // echo myinput($fields->video, '12');
               ?>
             </div>
           </div>
@@ -33,8 +33,8 @@
               <?php
               echo myinput($fields->facebook, '12');
               echo myinput($fields->twitter, '12');
-              echo myinput($fields->esenvivo, '12');
-              echo myinput($fields->urlvivo, '12');
+              // echo myinput($fields->esenvivo, '12');
+              // echo myinput($fields->urlvivo, '12');
               ?>
             </div>
           </div>
