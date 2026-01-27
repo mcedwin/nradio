@@ -86,9 +86,9 @@
 <script src="https://unpkg.com/@barba/core"></script>
 
     <script src="<?php echo base_url('sys/assets/lib/fancybox/fancybox.umd.js') ?>"></script>
-<script src="<?php echo base_url('sys/assets/js/scripts.js') ?>"></script>
-<script src="<?php echo base_url('sys/assets/js/web.js') ?>"></script>
-<script src="<?php echo base_url('sys/assets/js/form.js') ?>"></script>
+<script src="<?php echo base_url('sys/assets/js/scripts.js?v=1') ?>"></script>
+<script src="<?php echo base_url('sys/assets/js/web.js?v=1') ?>"></script>
+<script src="<?php echo base_url('sys/assets/js/form.js?v=1') ?>"></script>
 <?php echo $js ?? ""; ?>
 <script>
   var base_url = '<?php echo base_url() ?>';
