@@ -19,7 +19,7 @@
       <h3>Departamentos</h3>
         <div class="list-group list-group-flush mb-4 border" style="height:300px; overflow:auto">
           <?php foreach ($depas as $depa): ?>
-            <a href="<?php echo base_url('frecuencias/list/'.$depa->id) ?>" class="list-group-item list-group-item-action cdepa" aria-current="true">
+            <a href="<?php echo base_url('frecuencias/list/'.$depa->id) ?>" class="list-group-item list-group-item-action cdepa" aria-current="true" data-barba-prevent>
               <?php echo $depa->nombre ?>
             </a>
           <?php endforeach; ?>

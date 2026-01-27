@@ -7,6 +7,7 @@
   <title><?php echo $meta->title ?></title>
   <meta name="description" content="<?php echo $meta->description ?>" />
   <link rel="stylesheet" href="<?php echo base_url('/sys/assets/lib/bootstrap533/css/bootstrap.min.css') ?>" />
+ <link rel="stylesheet" href="<?php echo base_url('/sys/assets/lib/fancybox/fancybox.css') ?>" />
   <!-- <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet"> -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet">
 
@@ -85,13 +86,13 @@ echo ucfirst($formateador->format($fecha));
             $issub = count($item['menu']) > 0;
           ?>
             <li class="nav-item <?php echo $issub ? 'dropdown' : '' ?>">
-              <a class="nav-link <?php echo $issub ? 'dropdown-toggle' : '' ?> <?php echo $active; ?>" href="<?php echo base_url($item['url']); ?>" <?php echo $issub ? 'id="navbarDropdown' . $index . '" role="button" data-bs-toggle="dropdown" aria-expanded="false"' : '' ?>><?php echo $item['name']; ?></a>
+              <a class="nav-link <?php echo $issub ? 'dropdown-toggle' : '' ?> <?php echo $active; ?>" href="<?php echo base_url($item['url']); ?>" <?php echo $issub ? 'data-barba-prevent id="navbarDropdown' . $index . '" role="button" data-bs-toggle="dropdown" aria-expanded="false"' : '' ?>><?php echo $item['name']; ?></a>
               <?php if ($issub): ?>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown<?php echo $index; ?>">
                   <?php
                   foreach ($item['menu'] as $subitem) :
                   ?>
-                    <li><a class="dropdown-item" href="<?php echo base_url($subitem['url']); ?>"><?php echo $subitem['name']; ?></a></li>
+                    <li><a class="dropdown-item" href="<?php echo base_url($subitem['url']); ?>" <?php echo preg_match("#audio#",$subitem['url'])?'data-barba-prevent':''; ?>><?php echo $subitem['name']; ?></a></li>
                   <?php endforeach; ?>
                 </ul>
               <?php endif; ?>

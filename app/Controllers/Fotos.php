@@ -21,8 +21,7 @@ class Fotos extends BaseController
   public function index()
   {
 
-    $this->addCss(['lib/fancybox/fancybox.css']);
-    $this->addJs(['lib/fancybox/fancybox.umd.js', 'js/web.js']);
+    
 
 
     $datos['config'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();

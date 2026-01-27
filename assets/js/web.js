@@ -29,17 +29,72 @@ btnPlay.addEventListener("click", r);
 btnPlay2.addEventListener("click", r);
 
 document.addEventListener("DOMContentLoaded", () => {
+  $(document).on("click", ".cdepa", function (e) {
+    e.preventDefault();
+
+    $(".contdepa").load($(this).attr("href"));
+  });
+
+  // 🔴 BLOQUEAR CLICK EN MISMO LINK (ya lo tenías)
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link || !link.href) return;
+
+    const current = window.location.href.split("#")[0];
+    const target = link.href.split("#")[0];
+
+    if (current === target) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      return false;
+    }
+  });
+
   barba.init({
+    prevent: ({ el }) => {
+      if (!el || !el.href) return false;
+
+      // 🔥 1. Ignorar links marcados
+      if (el.hasAttribute("data-barba-prevent")) return true;
+
+      // 🔥 2. Ignorar externos
+      if (el.host !== window.location.host) return true;
+
+      // 🔥 3. Ignorar descargas
+      if (el.href.match(/\.(pdf|zip|rar|mp3|jpg|png)$/i)) return true;
+
+      // 🔥 4. Ignorar anclas
+      if (el.hash) return true;
+
+      return false; // Barba sí actúa
+    },
+    views: [
+      {
+        namespace: "home",
+        afterEnter() {
+          $("form").load_img();
+          $(".alerta").hide();
+          $("form").submit(function () {
+            $(this).mysave((data) => {
+              //window.location.href = data.redirect;
+              $(".alerta").show();
+              $(".alerta .mensaje").text(data.mensaje);
+              $("form")[0].reset();
+              $(window).scrollTop(0);
+            });
+            return false;
+          });
+        },
+      },
+    ],
     transitions: [
       {
         name: "simple-transition",
         leave(data) {
-          // Creamos una transición de opacidad simple con CSS puro
           data.current.container.style.opacity = 0;
         },
         enter(data) {
           data.next.container.style.opacity = 0;
-          // Forzamos un pequeño retraso para que se vea suave
           setTimeout(() => {
             data.next.container.style.opacity = 1;
             data.next.container.style.transition = "opacity 0.5s";
@@ -49,9 +104,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   });
 
-  // ESTO ES VITAL: Si Barba no detecta los links, los forzamos
   barba.hooks.enter(() => {
-    window.scrollTo(0, 0); // Sube al inicio al cambiar de página
+    window.scrollTo(0, 0);
   });
 });
 

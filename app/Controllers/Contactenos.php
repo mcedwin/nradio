@@ -129,7 +129,7 @@ class Contactenos extends BaseController
 
   public function contacto()
   {
-    $this->addJs(['js/form.js']);
+    // $this->addJs(['js/form.js']);
     $datos['config'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
 
     $datos['title'] = 'Contacto';
@@ -141,7 +141,7 @@ class Contactenos extends BaseController
 
   public function testimonio()
   {
-    $this->addJs(['js/form.js']);
+    // $this->addJs(['js/form.js']);
     $datos['config'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
 
     $datos['title'] = 'Cuéntanos tu testimonio';

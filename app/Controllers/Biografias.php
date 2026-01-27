@@ -21,7 +21,7 @@ class Biografias extends BaseController
   public function index()
   {
     $this->addCss(['lib/fancybox/fancybox.css']);
-    $this->addJs(['lib/fancybox/fancybox.umd.js', 'js/web.js']);
+    $this->addJs(['lib/fancybox/fancybox.umd.js']);
     
     $datos['config'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
     $datos['noticias'] = $this->db->query("SELECT * FROM noticias where activo=1 order by orden asc limit 3")->getResult();
@@ -49,7 +49,7 @@ class Biografias extends BaseController
   {
     helper('formulario');
     $this->addCss(['lib/fancybox/fancybox.css']);
-    $this->addJs(['lib/fancybox/fancybox.umd.js', 'js/web.js']);
+    $this->addJs(['lib/fancybox/fancybox.umd.js']);
 
     $datos['config'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
     $datos['registro'] = $reg = $this->db->query("SELECT * FROM {$this->table} WHERE slugifyTitulo='{$slug}' LIMIT 1")->getRow();
