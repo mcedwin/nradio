@@ -67,7 +67,7 @@ EOT;
 
 function myinput($reg, $col, $class = '', $params = '', $data = array(), $placeholder = "")
 {
-
+    $reg->value = esc($reg->value);
     if (!isset($reg->id)) $reg->id = $reg->name;
 
     if (isset($reg->max_length) && $reg->max_length >= 256) $reg->type = 'text';

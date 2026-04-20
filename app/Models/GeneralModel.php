@@ -148,6 +148,7 @@ class GeneralModel extends Model
       // 'imagenfrmPedido' => array('label' => 'Form Pedidos'),
       // 'imagenfrmTestimonio' => array('label' => 'Form Testimonios'),
       'contribucion' => array('label' => 'Contribución'),
+      'frasetop' => array('label' => 'Frase Top'),
       // 'esenvivo' => array('label' => 'Es en Vivo','type'=>'bit', 'required' => false),
       // 'urlvivo' => array('label' => 'Url En Vivo', 'required' => false),
     ]];

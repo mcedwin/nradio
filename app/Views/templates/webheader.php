@@ -32,9 +32,12 @@
 <body data-barba="wrapper">
   <nav class="navbar navbar-dark bg-radio1 py-1">
     <div class="container d-flex justify-content-between align-items-center">
-      <span class="badge bg-danger pulse-animation">EN VIVO</span>
-      <div class="text-white small d-none d-md-block">Escucha: "La rotativa del aire" con los mejores panelistas</div>
+      <span class="badge bg-danger pulse-animation">TRANSMITIENDO</span>
+      <div class="text-white small d-none d-md-block"><?php echo $conf->frasetop; ?></div>
+      <div>
       <button class="btn btn-sm btn-outline-light" id="btn-play2">Escuchar Radio <i class="bi bi-play-fill"></i></button>
+      <a href="mailto:<?php echo $conf->email; ?>" class="btn btn-light btn-sm">&#9993;</a>
+      </div>
     </div>
   </nav>
   <div class="mainbar">

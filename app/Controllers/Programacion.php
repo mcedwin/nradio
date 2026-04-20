@@ -27,7 +27,7 @@ class Programacion extends BaseController
 
     $datos['title'] = 'Programación';
 
-    $datos['programas'] = $this->db->query("SELECT * FROM programas ORDER BY id ASC")->getResult();
+    $datos['programas'] = $this->db->query("SELECT * FROM programas WHERE activo=1 ORDER BY id ASC")->getResult();
 
     $this->showWHeader();
     $this->ShowContent('index', $datos);

@@ -76,16 +76,16 @@
           </div>
           <div class="row">
             <div class="col-lg-4 col-md-4 col-sm-6 animate-onscroll">
-              <h6>Visítenos</h6>
-              <p><?php echo $config->direccion; ?></p>
+              <h6>ESTUDIOS CENTRALES</h6>
+              <p>&#127968; <?php echo $config->direccion; ?></p>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 animate-onscroll">
               <h6>Llámenos</h6>
-              <p><?php echo $config->telefono; ?></p>
+              <p>&#128222; <?php echo $config->telefono; ?></p>
             </div>
             <div class="col-lg-4 col-md-4 col-sm-6 animate-onscroll">
               <h6>Escríbanos</h6>
-              <p><a href="mailto:<?php echo $config->email; ?>"><?php echo $config->email; ?></a> </p>
+              <p><a href="mailto:<?php echo $config->email; ?>">&#128231; <?php echo $config->email; ?></a> </p>
             </div>
           </div>
         </div>

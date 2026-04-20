@@ -23,8 +23,8 @@
             <div class="col-md-12">
               <div>
                 <img src="<?php echo base_url('static/images/' . $table . '/' . $registro->imagen); ?>" alt="" width="360" class="me-3 mb-2 rounded img-fluid">
-                <p>Lugar: <?php $registro->direccion ?></p>
-                <p>Frecuencia: <?php $registro->frecuencia ?></p>
+                <p>Lugar: <?php echo $registro->direccion ?></p>
+                <p>Frecuencia: <?php echo $registro->frecuencia ?></p>
                 <div class="detalle mb-4">
                   <?php echo wpautop($registro->detalle) ?>
                 </div>

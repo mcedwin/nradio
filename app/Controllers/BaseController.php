@@ -198,7 +198,7 @@ abstract class BaseController extends Controller
         'menu' => [
           // ['url' => 'home', 'base' => 'home', 'name' => 'Inicio', 'ico' => 'fa-solid fa-house', 'menu' => []],
           ['url' => 'admin/banners', 'base' => 'banners', 'name' => 'Banners', 'ico' => 'fa-solid fa-film', 'menu' => []],
-          ['url' => 'admin/programas', 'base' => 'programas', 'name' => 'Programas', 'ico' => 'fa-solid fa-film', 'menu' => []],
+          ['url' => 'admin/programas', 'base' => 'programas', 'name' => 'Programación', 'ico' => 'fa-solid fa-film', 'menu' => []],
           ['url' => 'admin/noticias', 'base' => 'noticias', 'name' => 'Noticias', 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
 
         ]
@@ -310,7 +310,7 @@ abstract class BaseController extends Controller
       ]],
     ];
 
-
+  $this->datos['conf'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
     foreach ($this->csss as $css) {
       $strcss .= '<link href="' . ((preg_match('#^htt#', $css) == TRUE) ? '' : base_url('sys/assets') . '/') . $css . '?v=' . $this->frontVersion . '" rel="stylesheet" type="text/css" media="all" />';
     }
@@ -332,20 +332,20 @@ abstract class BaseController extends Controller
 
 
     $datos['op1'] = [
-      ['url' => '/', 'name' => 'Inicio'],
-      ['url' => 'biografias',  'name' => 'Biografía'],
+      ['url' => base_url('/'), 'name' => 'Inicio'],
+      ['url' => 'programacion',  'name' => 'Programación'],
       ['url' => 'frecuencias',  'name' => 'Frecuencias'],
-      ['url' => 'campanias',  'name' => 'Campañas'],
+      // ['url' => 'campanias',  'name' => 'Campañas'],
       ['url' => 'noticias',  'name' => 'Noticias'],
-      ['url' => 'testimonios', 'name' => 'Testimonios'],
+      // ['url' => 'testimonios', 'name' => 'Testimonios'],
     ];
     $datos['op2'] = [
       ['url' => 'fotos',  'name' => 'Fotos'],
-      ['url' => 'videos',  'name' => 'Videos'],
-      ['url' => 'audios',  'name' => 'Audio'],
-      ['url' => 'envianos-tu-pedido',  'name' => 'Pedidos de Oración'],
+      // ['url' => 'videos',  'name' => 'Videos'],
+      // ['url' => 'audios',  'name' => 'Audio'],
+      // ['url' => 'envianos-tu-pedido',  'name' => 'Pedidos de Oración'],
       ['url' => 'contacto',  'name' => 'Escríbanos'],
-      ['url' => 'cuentanos-tu-testimonio',  'name' => 'Cuentanos tu testimonio'],
+      // ['url' => 'cuentanos-tu-testimonio',  'name' => 'Cuentanos tu testimonio'],
     ];
  helper('formulario');
     $datos['conf'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();

@@ -16,7 +16,7 @@
               echo myinput($fields->email, '12');
               echo myinput($fields->direccion, '12');
               echo myinput($fields->mapa, '12');
-              // echo myinput($fields->video, '12');
+              echo myinput($fields->frasetop, '12');
               ?>
             </div>
           </div>

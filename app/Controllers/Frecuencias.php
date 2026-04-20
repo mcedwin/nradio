@@ -47,7 +47,8 @@ class Frecuencias extends BaseController
 
   public function list($id){
     $datos['table'] = $this->table;
-    $datos['registros'] = $this->db->query("SELECT * FROM frecuencias WHERE idDepartamento='{$id}'")->getResult();
+    if($id == '0') $datos['registros'] = $this->db->query("SELECT * FROM frecuencias WHERE 1 order BY id desc")->getResult();
+    else $datos['registros'] = $this->db->query("SELECT * FROM frecuencias WHERE idDepartamento='{$id}'")->getResult();
     $this->ShowContent('list', $datos);
   }
 

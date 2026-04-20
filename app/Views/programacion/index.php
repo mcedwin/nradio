@@ -19,8 +19,7 @@
       <!-- Introducción -->
       <div>
         <p>
-          Acompáñanos cada día con mensajes de fe, música cristiana
-          y programas diseñados para edificar tu vida espiritual.
+          Disfrute de la Programación de Cadena Radio Vision, Una radio para todos durante las 24 horas del día.
         </p>
       </div>
 
