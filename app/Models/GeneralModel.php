@@ -27,9 +27,10 @@ class GeneralModel extends Model
       'imagen' => array('label' => 'Imagen', 'required' => false),
     ]];
     $datas['programas'] = ['table' => 'programas', 'primary' => 'id', 'fields' => [
-      'titulo' => array('label' => 'Titulo', 'required' => false),
+      'titulo' => array('label' => 'Programa', 'required' => false),
       'horario' => array('label' => 'Horario', 'required' => false),
       'detalle' => array('label' => 'Detalle', 'required' => false),
+      'contenido' => array('label' => 'Contenido', 'required' => false),
     ]];
     $datas['noticias'] = ['table' => 'noticias', 'primary' => 'id', 'fields' => [
       'titulo' => array('label' => 'Titulo'),

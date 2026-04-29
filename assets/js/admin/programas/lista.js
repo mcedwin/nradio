@@ -44,15 +44,15 @@ $(document).ready(function() {
     });
 
 
-    $(document).on('click', '.edit', function() {
-        $(this).mydialog(function(dlg) { dlg.load_img() }, () => $table.draw())
-        return false;
-    });
+    // $(document).on('click', '.edit', function() {
+    //     $(this).mydialog(function(dlg) { dlg.load_img() }, () => $table.draw())
+    //     return false;
+    // });
 
-    $(document).on('click', '.new', function() {
-        $(this).mydialog(function(dlg) { dlg.load_img() }, () => $table.draw())
-        return false;
-    });
+    // $(document).on('click', '.new', function() {
+    //     $(this).mydialog(function(dlg) { dlg.load_img() }, () => $table.draw())
+    //     return false;
+    // });
 
     $(document).on('click', '.activar', function() {
         $this = $(this);

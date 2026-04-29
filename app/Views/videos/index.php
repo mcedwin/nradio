@@ -1,5 +1,5 @@
 <div class="page">
-  <section class="d-flex align-items-center" style="background-image:url('<?php echo base_url('static/images/configuracion/' . $config->imagenMultimedias); ?>')">
+  <section class="d-flex align-items-center">
 
     <div class="container">
 
@@ -15,7 +15,7 @@
   </section>
   <div class="container">
     <div class="row content mt-4">
-      <div class="col-md-8">
+      <div class="col-md-12">
         <div class="row">
           <?php foreach ($registros as $reg): ?>
             <div class="col-sm-4 col-xs-6 item">
@@ -33,7 +33,6 @@
         <?php echo $pager ?>
     </div>
       </div>
-      <?php echo view('templates/sidebar') ?>
     </div>
   </div>
 </div>

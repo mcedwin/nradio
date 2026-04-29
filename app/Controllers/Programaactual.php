@@ -19,17 +19,20 @@ class Programaactual extends BaseController
     $this->modelTestimonio = new GeneralModel('testimonios');
   }
 
-  
+
   public function index()
   {
+     helper('formulario');
     $this->addJs(['js/form.js']);
     $datos['config'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
 
-    $datos['title'] = 'Contacto';
+    
+    $datos['programa'] = $this->db->query("SELECT * FROM programas WHERE portada=1 LIMIT 1")->getRow();
+    $datos['title'] = $datos['programa']->titulo;
+
 
     $this->showWHeader();
     $this->ShowContent('index', $datos);
     $this->showWFooter();
   }
-
 }

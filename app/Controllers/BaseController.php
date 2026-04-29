@@ -119,7 +119,7 @@ abstract class BaseController extends Controller
           if (count($val) <= 0) $this->dieMsg(false, "Campo requerido : " . $fields[$key]->label);
         } else if ($fields[$key]->type != 'bit' && strlen($val) <= 0) $this->dieMsg(false, "Campo requerido : " . $fields[$key]->label);
       }
-      if (in_array($fields[$key]->type, array('text', 'varchar', 'url', 'email', 'fore', 'decimal', 'int', 'enum','password','char'))) {
+      if (in_array($fields[$key]->type, array('text', 'varchar', 'url', 'email', 'fore', 'decimal', 'int', 'enum', 'password', 'char'))) {
         $data[$key] = $this->request->getPost($key);
         if ($fields[$key]->type == 'int' && empty($val)) $data[$key] = null;
       } else if ($fields[$key]->type == 'date') {
@@ -213,6 +213,8 @@ abstract class BaseController extends Controller
         'title' => 'MULTIMEDIA',
         'menu' => [
           ['url' => 'admin/fotos', 'base' => 'fotos', 'name' => 'Fotos', 'ico' => 'fa-solid fa-camera', 'menu' => []],
+          ['url' => 'admin/audios', 'base' => 'audios', 'name' => 'Audios', 'ico' => 'fa-solid fa-music', 'menu' => []],
+          ['url' => 'admin/videos', 'base' => 'videos', 'name' => 'Videos', 'ico' => 'fa-solid fa-camera', 'menu' => []],
 
         ]
       ],
@@ -220,7 +222,6 @@ abstract class BaseController extends Controller
         'title' => 'ADMINISTRACIÓN',
         'menu' => [
           ['url' => 'admin/configuracion', 'base' => 'configuracion', 'name' => 'Configuración', 'ico' => 'fa-solid fa-gear', 'menu' => []],
-          ['url' => 'admin/audios', 'base' => 'audios', 'name' => 'Audios', 'ico' => 'fa-solid fa-music', 'menu' => []],
         ]
       ],
     ];
@@ -294,23 +295,25 @@ abstract class BaseController extends Controller
 
   public function showWHeader()
   {
-    $this->datos['noticias']=$this->db->query("SELECT * FROM noticias order by orden asc limit 3")->getResult();
+    $this->datos['noticias'] = $this->db->query("SELECT * FROM noticias order by orden asc limit 3")->getResult();
     $strcss = '';
 
+    $this->datos['programa'] = $this->db->query("SELECT * FROM programas WHERE portada=1 LIMIT 1")->getRow();
     $this->datos['menu'] = [
       ['url' => '/', 'base' => 'home', 'name' => 'INICIO', 'ico' => 'fa-solid fa-house', 'menu' => []],
       ['url' => 'frecuencias', 'base' => 'frecuencias', 'name' => 'NUESTRAS FRECUENCIAS', 'ico' => 'fa-solid fa-film', 'menu' => []],
       ['url' => 'programacion', 'base' => 'programacion', 'name' => 'PROGRAMACIÓN', 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
       ['url' => 'noticias', 'base' => 'noticias', 'name' => 'NOTICIAS', 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
       ['url' => 'contacto', 'base' => 'contacto', 'name' => 'CONTACTENOS', 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
-      // ['url' => 'programaactual', 'base' => 'programaactual', 'name' => 'PROGRAMA: LA VOZ DE SALVACIÓN', 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
       ['url' => 'multimedia', 'base' => 'multimedia', 'name' => 'MULTIMEDIA', 'ico' => 'fa-regular fa-newspaper', 'menu' => [
         ['url' => 'fotos', 'base' => 'multimedia', 'name' => 'Fotos'],
         ['url' => 'audios', 'base' => 'multimedia', 'name' => 'Audio'],
+        ['url' => 'videos', 'base' => 'multimedia', 'name' => 'Videos'],
       ]],
+      ['url' => 'programaactual', 'base' => 'programaactual', 'name' => $this->datos['programa']->titulo, 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
     ];
 
-  $this->datos['conf'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
+    $this->datos['conf'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
     foreach ($this->csss as $css) {
       $strcss .= '<link href="' . ((preg_match('#^htt#', $css) == TRUE) ? '' : base_url('sys/assets') . '/') . $css . '?v=' . $this->frontVersion . '" rel="stylesheet" type="text/css" media="all" />';
     }
@@ -341,13 +344,13 @@ abstract class BaseController extends Controller
     ];
     $datos['op2'] = [
       ['url' => 'fotos',  'name' => 'Fotos'],
-      // ['url' => 'videos',  'name' => 'Videos'],
+      ['url' => 'videos',  'name' => 'Videos'],
       // ['url' => 'audios',  'name' => 'Audio'],
       // ['url' => 'envianos-tu-pedido',  'name' => 'Pedidos de Oración'],
       ['url' => 'contacto',  'name' => 'Escríbanos'],
       // ['url' => 'cuentanos-tu-testimonio',  'name' => 'Cuentanos tu testimonio'],
     ];
- helper('formulario');
+    helper('formulario');
     $datos['conf'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
 
     $datos['js'] = $strjs;
