@@ -12,12 +12,13 @@
               <img src="<?php echo base_url('static/images/banners/' . $bn->imagen); ?>" class="d-block w-100" alt="<?php echo $bn->titulo ?>">
               <div class="carousel-caption">
                 <h5><span><?php echo $bn->titulo ?></span></h5>
-                <?php if (!empty($bn->detalle)): ?>
-                  <p class="pt-2"><span style="background-color:#ba3446"><?php echo $bn->detalle ?></span></p>
-                <?php endif; ?>
                 <?php if (!empty($bn->subTitulo)): ?>
                   <p><span style="background-color:#3e4095"><?php echo $bn->subTitulo ?></span></p>
                 <?php endif; ?>
+                <?php if (!empty($bn->detalle)): ?>
+                  <p class="pt-2"><span style="background-color:#ba3446"><?php echo $bn->detalle ?></span></p>
+                <?php endif; ?>
+                
                 <?php if (!empty($bn->url)): ?>
                   <a href="<?php echo $bn->url ?>" class="btn btn-primary">Ver más <i class="fa-solid fa-chevron-right"></i></a>
                 <?php endif; ?>

@@ -38,7 +38,7 @@
         </span>
         <a class="navbar-brand navbar-title" href="<?php echo base_url('/admin/banners'); ?>">
           <img class="logo" alt="Logo" src="<?php echo base_url('sys/assets/img/logo.png'); ?>">
-          <span>LACOSECHA</span>
+          <span>CADENA RADIO VISION</span>
         </a>
         <ul class="nav navbar-nav ms-auto">
           <li class="nav-item dropdown">
