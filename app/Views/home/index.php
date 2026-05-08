@@ -10,7 +10,7 @@
           <?php foreach ($banners as $i => $bn): ?>
             <div class="carousel-item <?php echo $i == 0 ? 'active' : ''; ?>" data-bs-interval="10000">
               <img src="<?php echo base_url('static/images/banners/' . $bn->imagen); ?>" class="d-block w-100" alt="<?php echo $bn->titulo ?>">
-              <div class="carousel-caption d-none d-md-block">
+              <div class="carousel-caption">
                 <h5><span><?php echo $bn->titulo ?></span></h5>
                 <?php if (!empty($bn->detalle)): ?>
                   <p class="pt-2"><span style="background-color:#ba3446"><?php echo $bn->detalle ?></span></p>
