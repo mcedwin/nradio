@@ -310,8 +310,11 @@ abstract class BaseController extends Controller
         ['url' => 'audios', 'base' => 'multimedia', 'name' => 'Audio'],
         ['url' => 'videos', 'base' => 'multimedia', 'name' => 'Videos'],
       ]],
-      ['url' => 'programaactual', 'base' => 'programaactual', 'name' => $this->datos['programa']->titulo, 'ico' => 'fa-regular fa-newspaper', 'menu' => []],
+      
     ];
+    if(isset($this->datos['programa']->titulo)){
+      $this->datos['menu'][] = ['url' => 'programaactual', 'base' => 'programaactual', 'name' => $this->datos['programa']->titulo, 'ico' => 'fa-regular fa-newspaper', 'menu' => []];
+    }
 
     $this->datos['conf'] = $this->db->query("SELECT * FROM configuracion WHERE 1 LIMIT 1")->getRow();
     foreach ($this->csss as $css) {
