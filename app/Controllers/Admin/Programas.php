@@ -143,8 +143,8 @@ class Programas extends BaseController
   public function activarportada($id)
   {
     $this->dieAjax();
-    $this->db->query("UPDATE ".$this->model->getTable()." SET portada = 0 ");
-    $this->db->query("UPDATE ".$this->model->getTable()." SET portada = 1 WHERE id='{$id}'");
+    $this->db->query("UPDATE ".$this->model->getTable()." SET portada = 0 WHERE id!='{$id}'");
+    $this->db->query("UPDATE ".$this->model->getTable()." SET portada = NOT portada WHERE id='{$id}'");
     $this->dieMsg();
   }
 }
