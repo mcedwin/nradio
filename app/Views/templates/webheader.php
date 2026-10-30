@@ -36,7 +36,7 @@
       <div class="text-white small d-none d-md-block"><?php echo $conf->frasetop; ?></div>
       <div>
       <button class="btn btn-sm btn-outline-light" id="btn-play2">Escuchar Radio <i class="bi bi-play-fill"></i></button>
-      <a href="mailto:<?php echo $conf->email; ?>" class="btn btn-light btn-sm">&#9993;</a>
+      <a href="https://box2388.bluehost.com:2096/" class="btn btn-light btn-sm">&#9993;</a>
       </div>
     </div>
   </nav>
